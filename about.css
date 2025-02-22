@@ -1,0 +1,187 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif; /* New font applied */
+}
+
+/* Background Image */
+body {
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.logo {
+    font-size: 26px; /* Slightly larger for impact */
+    font-weight: 700;
+    color: white;
+}
+
+/* Navbar Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    padding: 10px 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links .active {
+    color: #00bcd4;
+    font-weight: bold;
+}
+
+/* Resume Button */
+.resume-btn {
+    background: #00bcd4;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.resume-btn a {
+    text-decoration: none;
+    color: white;
+}
+
+/* About Section */
+.about {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Image Styling */
+.about-image img {
+    width: 180px;
+    height: 180px;
+    /* border-radius: 50%; */
+    border: 4px solid white;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* About Content */
+.about-content {
+    text-align: left;
+    padding: 0 20px;
+}
+
+.about-content h1 {
+    font-size: 38px; /* Bigger and bolder */
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.about-content p {
+    font-size: 18px;
+    color: #ddd;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+/* Highlighted Text */
+.highlight {
+    color: #9ac3ff;
+    font-weight: 600;
+}
+
+/* About Buttons */
+.about-buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.btn {
+    background: #00bcd4;
+    color: white;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-content {
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+

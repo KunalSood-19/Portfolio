@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Showcase</title>
+    <link rel="stylesheet" href="projects.css">
+    <style>
+        video {
+            width: 100%;
+            max-width: 1000px;
+            height: 500px;
+            display: block;
+            margin: 20px auto;
+            border-radius: 20px;
+            object-fit: cover;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Kunal Sood</div>
+        <ul class="nav-links">
+            <li><a href="portf.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="Adobe Scan 23-Feb-2025.pdf" class="resume-btn" download>Resume</a></li>
+        </ul>
+        <div class="right-menu">
+            <button class="theme-toggle">🌙</button>
+            <button class="hamburger">☰</button>
+        </div>
+    </nav>
+
+    <!-- Project Showcase -->
+    <section class="project-showcase">
+        <div class="project-content">
+            <h3>Gadget User, <span class="highlight">Tech Website</span></h3>
+            <h1>"Elevating tech experiences with seamless design." 🚀</h1>
+            <p>
+                "Developing an innovative mobile application and web portal for Gadget User to enhance user engagement,
+                streamline tech reviews, and provide a seamless browsing experience with cutting-edge UI/UX design."
+            </p>
+            <div class="services">
+                <h4>Services</h4>
+                <p>UX & UX Design</p>
+                <p>Better user experience</p>
+            </div>
+        </div>
+        <div class="project-media">
+            <video id="project-video" muted loop>
+                <source src="shopping.mp4.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <section class="project-showcase">
+        <div class="project-content">
+            <h3>Learnify <span class="highlight">Lernify : educational website</span></h3>
+            <h1>"Building Learnify: A smart platform for seamless and secure online & offline education."</h1>
+            <p>
+                "Designing the Learnify new web portal to enhance online education, offline streamline
+                learning experiences."
+            </p>
+            <div class="services">
+                <h4>Services</h4>
+                <p>UX & UX Design</p>
+                <p>Better user experience</p>
+            </div>
+        </div>
+        <div class="project-media">
+            <video id="project-video-2" muted loop>
+                <source src="Screen%20Recording%202025-02-20%20181142.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("project-video").play();
+            document.getElementById("project-video-2").play();
+        });
+    </script>
+
+    <script src="projects.js"></script>
+</body>
+
+</html>
