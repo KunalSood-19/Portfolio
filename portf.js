@@ -89,23 +89,51 @@ function generateResponse(input) {
     return responses[input] || "I'm not sure about that, but I'm learning!";
 }
 
-// Handle Navigation to Pages
-function handleNavigation(input) {
-    const pages = {
-        "open home": "portf.html",
-        "go to about": "about.html",
-        "open projects": "projects.html",
-        "go to skills": "skills.html",
-        "open contact": "contact.html"
-    };
+// // Handle Navigation to Pages
+// function handleNavigation(input) {
+//     const pages = {
+//         "open home": "portf.html",
+//         "go to about": "about.html",
+//         "open projects": "projects.html",
+//         "go to skills": "skills.html",
+//         "open contact": "contact.html"
+//     };
 
-    if (pages[input]) {
-        setTimeout(() => {
-            window.location.href = pages[input]; // Redirect to the correct page
-        }, 1500);
-    }
+//     if (pages[input]) {
+//         setTimeout(() => {
+//             window.location.href = pages[input]; // Redirect to the correct page
+//         }, 1500);
+//     }
+// }
+
+function generateResponse(input) {
+    const responses = {
+        "hello": "Hi there! How can I help? 😊",
+        "hi": "Hi there! How can I help? 😊",
+        "who are you": "I'm an AI Assistant here to assist you!",
+        "what can you do": "I can answer questions and help you navigate!",
+        "bye": "Goodbye! Have a great day! 😊",
+        "open home": "Opening Home Page... 🏠",
+        "go to about": "Navigating to About Page... ℹ️",
+        "open projects": "Taking you to Projects Page... 🚀",
+        "go to skills": "Heading to Skills Page... 🎨",
+        "open contact": "Opening Contact Page... 📞"
+    };
+    return responses[input] || "I'm not sure about that, but I'm learning!";
 }
 
+function handleNavigation(input) {
+    const pages = {
+        "open home": "index.html",
+        "openabout": "about.html",
+        "open projects": "projects.html",
+        "open skills": "skills.html",
+        "open contact": "contact.html"
+    };
+    if (pages[input]) {
+        setTimeout(() => { window.location.href = pages[input]; }, 1500);
+    }
+}
 document.addEventListener("DOMContentLoaded", () => {
     const themeToggle = document.querySelector(".theme-toggle");
     const hamburger = document.querySelector(".hamburger");
@@ -171,6 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
         navLinks.classList.toggle("active");
     });
 });
+
 
 
 
