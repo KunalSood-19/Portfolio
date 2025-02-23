@@ -75,6 +75,7 @@ function sendMessage() {
 function generateResponse(input) {
     const responses = {
         "hello": "Hi there! How can I help? 😊",
+        "hi": "Hi there! How can I help? 😊",
         "who are you": "I'm an AI Assistant here to assist you!",
         "what can you do": "I can answer questions and help you navigate!",
         "bye": "Goodbye! Have a great day! 😊",
