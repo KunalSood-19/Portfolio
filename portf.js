@@ -71,23 +71,6 @@ function sendMessage() {
     }, 1000);
 }
 
-// AI Responses & Page Navigation
-function generateResponse(input) {
-    const responses = {
-        "hello": "Hi there! How can I help? 😊",
-        "hi": "Hi there! How can I help? 😊",
-        "who are you": "I'm an AI Assistant here to assist you!",
-        "what can you do": "I can answer questions and help you navigate!",
-        "bye": "Goodbye! Have a great day! 😊",
-        "open home": "Opening Home Page... 🏠",
-        "go to about": "Navigating to About Page... ℹ️",
-        "open projects": "Taking you to Projects Page... 🚀",
-        "go to skills": "Heading to Skills Page... 🎨",
-        "open contact": "Opening Contact Page... 📞"
-    };
-
-    return responses[input] || "I'm not sure about that, but I'm learning!";
-}
 
 // // Handle Navigation to Pages
 // function handleNavigation(input) {
@@ -114,9 +97,9 @@ function generateResponse(input) {
         "what can you do": "I can answer questions and help you navigate!",
         "bye": "Goodbye! Have a great day! 😊",
         "open home": "Opening Home Page... 🏠",
-        "go to about": "Navigating to About Page... ℹ️",
+        "open about": "Navigating to About Page... ℹ️",
         "open projects": "Taking you to Projects Page... 🚀",
-        "go to skills": "Heading to Skills Page... 🎨",
+        "open skills": "Heading to Skills Page... 🎨",
         "open contact": "Opening Contact Page... 📞"
     };
     return responses[input] || "I'm not sure about that, but I'm learning!";
@@ -125,7 +108,7 @@ function generateResponse(input) {
 function handleNavigation(input) {
     const pages = {
         "open home": "index.html",
-        "openabout": "about.html",
+        "open about": "about.html",
         "open projects": "projects.html",
         "open skills": "skills.html",
         "open contact": "contact.html"
@@ -203,3 +186,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+function toggleMenu() {
+    let navLinks = document.querySelector(".nav-links");
+    navLinks.classList.toggle("active");
+}
+document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+
+    hamburger.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+    });
+});

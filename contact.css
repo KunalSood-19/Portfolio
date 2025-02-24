@@ -409,19 +409,24 @@ body.dark-mode .contact-form textarea {
 .toggle-mode:hover {
     background: #0056b3;
 }
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .contact-container form {
-        max-width: 90%;
+@media (max-width: 1024px) {  /* Tablets */
+    .nav-links {
+        display: none; /* Hide links on smaller screens */
     }
-    
-    .social-links {
-        flex-direction: column;
+    .hero {
+        padding: 80px 15px;
     }
+}
 
-    .social-icon {
+@media (max-width: 768px) {  /* Phones */
+    .hero h1 {
+        font-size: 24px;
+    }
+    .blog-form {
         width: 100%;
-        text-align: center;
+        padding: 15px;
+    }
+    .contact-icons {
+        flex-direction: column;
     }
 }
