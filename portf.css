@@ -23,8 +23,8 @@ body {
 
 /* 🟢 Dark Mode (Only Changes Text & UI Colors, Not Background) */
 .dark-mode {
-    --text-color: white;
-    --nav-bg: rgba(13, 17, 23, 0.9);
+    --text-color: rgb(0, 0, 0);
+    --nav-bg: rgba(255, 255, 255, 0.9);
     --nav-hover: #ff9800;
     --btn-bg: #0077b5;
     --btn-hover: #005a91;
@@ -409,7 +409,7 @@ body, .logo, .nav-links a, .hero h1, .hero p, .contact h2, .contact-icons a {
         display: none;
         flex-direction: column;
         width: 100%;
-        background: rgba(0, 0, 0, 0.9);
+        background: rgba(255, 255, 255, 0.9);
     }
 
     .nav-links.active {
@@ -497,3 +497,137 @@ body, .logo, .nav-links a, .hero h1, .hero p, .contact h2, .contact-icons a {
     }
 }
 
+/* Responsive Styles Based on Screen Size */
+
+/* 🟢 Phones (Max 600px) */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .contact h2 {
+        font-size: 1.4rem;
+    }
+
+    .contact-icons a {
+        font-size: 20px;
+    }
+
+    .chat-box {
+        width: 220px;
+    }
+
+    .profile-container {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* 🟢 Tablets (Max 768px) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px;
+        flex-direction: column;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .contact-icons a {
+        font-size: 25px;
+    }
+
+    .chat-box {
+        width: 250px;
+    }
+}
+
+/* 🟢 Laptops (Max 992px) */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .contact h2 {
+        font-size: 2rem;
+    }
+
+    .contact-icons a {
+        font-size: 30px;
+    }
+}
+
+/* 🟢 Large Screens (Max 1200px) */
+@media (max-width: 1200px) {
+    .navbar {
+        padding: 20px 30px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.5rem;
+    }
+
+    .contact h2 {
+        font-size: 2.5rem;
+    }
+
+    .contact-icons a {
+        font-size: 35px;
+    }
+}
+
+
+
+/* Center the profile image */
+.profile-image {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Hamburger menu styling for dark mode */
+.dark-mode .hamburger-menu {
+    background-color: black;
+    color: white;
+}
+
+/* Hamburger menu styling for light mode */
+.light-mode .hamburger-menu {
+    background-color: white;
+    color: black;
+}
