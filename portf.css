@@ -409,7 +409,7 @@ body, .logo, .nav-links a, .hero h1, .hero p, .contact h2, .contact-icons a {
         display: none;
         flex-direction: column;
         width: 100%;
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(0, 0, 0, 0.9);
     }
 
     .nav-links.active {
@@ -614,20 +614,214 @@ body, .logo, .nav-links a, .hero h1, .hero p, .contact h2, .contact-icons a {
 
 
 
-/* Center the profile image */
-.profile-image {
-    display: block;
-    margin: 0 auto;
+/* Base styles (keep original structure intact) */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-/* Hamburger menu styling for dark mode */
-.dark-mode .hamburger-menu {
-    background-color: black;
+.container {
+    width: 90%; /* Make content flexible */
+    max-width: 1200px; /* Prevent too wide layout on large screens */
+    margin: auto;
+}
+
+/* Responsive Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+/* Responsive Grid */
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    flex: 1 1 calc(33.333% - 20px); /* Adjust width for different devices */
+    margin: 10px;
+}
+
+/* Image Responsiveness */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Media Queries for Different Screen Sizes */
+
+@media (max-width: 1024px) { /* Tablets */
+    .card {
+        flex: 1 1 calc(50% - 20px); /* Two cards per row */
+    }
+}
+
+@media (max-width: 768px) { /* Mobile Devices */
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .card {
+        flex: 1 1 100%; /* Full width */
+    }
+}
+#nav-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+#nav-menu.open {
+    display: block; /* Show menu when 'open' class is added */
+}
+
+
+/* Header container */
+.header {
+    display: flex;
+    justify-content: space-between; /* Ensures logo is on the left and other elements are on the right */
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+/* Kunal Sood (logo/text) to the extreme left */
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-left: 10px; /* Adds spacing from left */
+}
+
+/* Navbar container (hamburger and theme toggle) */
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adds spacing between elements */
+}
+
+/* Dark/Light Mode Toggle - Positioned before the Hamburger */
+#theme-toggle {
+    cursor: pointer;
+    font-size: 18px;
+    background: none;
+    border: none;
     color: white;
 }
 
-/* Hamburger menu styling for light mode */
-.light-mode .hamburger-menu {
-    background-color: white;
-    color: black;
+/* Hamburger Menu - Positioned to the extreme right */
+#menu-toggle {
+    cursor: pointer;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    margin-right: 10px; /* Adds spacing from right */
 }
+
+/* Responsive Navigation */
+#nav-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+#nav-menu.open {
+    display: block; /* Show menu when 'open' class is added */
+}
+
+/* Responsive Design for Small Screens */
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: row;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: row-reverse; /* Ensures hamburger is on the extreme right */
+    }
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #222;
+    color: white;
+    position: relative;
+}
+
+/* Navigation Links - Default (Desktop View) */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Hamburger Button */
+.hamburger {
+    display: none; /* Hidden by default on large screens */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Mobile View: Hide nav-links and show hamburger */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block; /* Show hamburger on smaller screens */
+    }
+
+    .nav-links {
+        display: none; /* Hide nav-links initially */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        width: 200px;
+        text-align: center;
+        border-radius: 8px;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show menu when active */
+    }
+}
+
+

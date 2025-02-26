@@ -198,3 +198,50 @@ document.addEventListener("DOMContentLoaded", function () {
         navLinks.classList.toggle("active");
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menu-toggle"); // Hamburger button
+    const navMenu = document.getElementById("nav-menu"); // Navigation menu
+    const navLinks = document.querySelectorAll("#nav-menu a"); // All menu links
+
+    // Toggle menu open/close when clicking the hamburger icon
+    menuToggle.addEventListener("click", function () {
+        navMenu.classList.toggle("open");
+    });
+
+    // Close menu when clicking any link
+    navLinks.forEach(link => {
+        link.addEventListener("click", function () {
+            navMenu.classList.remove("open");
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+
+    // Toggle menu on click
+    hamburger.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", function () {
+            navLinks.classList.remove("active");
+        });
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
