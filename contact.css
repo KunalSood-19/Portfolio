@@ -430,3 +430,17 @@ body.dark-mode .contact-form textarea {
         flex-direction: column;
     }
 }
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Optional, if you want it to center vertically in the viewport */
+}
+
+.profile-image {
+  border-radius: 50%;
+  width: 150px; /* Adjust the size as needed */
+  height: 150px;
+}
+

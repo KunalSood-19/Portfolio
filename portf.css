@@ -825,3 +825,68 @@ img {
 }
 
 
+@media (max-width: 450px) {
+    .navbar {
+        width: 100%;
+        padding: 10px; /* Adjust padding */
+        justify-content: space-between; /* Ensure elements are spaced properly */
+    }
+
+    .nav-links {
+        width: 100%;
+        text-align: center;
+    }
+
+    .right-menu {
+        display: flex;
+        align-items: center;
+        gap: 10px; /* Reduce spacing */
+    }
+
+    .hamburger {
+        margin-left: auto; /* Push to the right */
+    }
+}
+
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px; /* Space between image and text */
+}
+
+.profile-pic {
+    width: 150px; /* Adjust size */
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #1e90ff;
+    object-fit: cover;
+}
+
+.im1 {
+    border: #2d8fff solid 5px;
+    border-radius: 100px;  /* Corrected this line */
+    height:150px;
+    width:150px;
+    margin-bottom:20px;
+
+}
+/* Default (Light Mode) */
+.hamburger {
+    color: white; /* Changes the hamburger icon to white in light mode */
+}
+
+/* Dark Mode */
+.dark-mode .hamburger {
+    color: white; /* Ensures it's still white in dark mode */
+}
