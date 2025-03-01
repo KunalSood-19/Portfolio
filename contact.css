@@ -322,8 +322,8 @@ body.dark-mode .contact-form textarea {
 .contact-container input,
 .contact-container textarea {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
+    padding: 8px;
+    margin-bottom: 20px;
     border: none;
     border-radius: var(--border-radius);
     font-size: 1rem;
@@ -443,4 +443,90 @@ body.dark-mode .contact-form textarea {
   width: 150px; /* Adjust the size as needed */
   height: 150px;
 }
+
+
+
+/* Default Styles */
+.contact-form {
+    width: 50%;
+    max-width: 600px;  
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+}
+
+/* Social Buttons */
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;  /* Allow buttons to wrap */
+}
+
+.social-buttons a {
+    padding: 12px 20px;
+    font-size: 16px;
+    transition: all 0.3s ease;  /* Smooth resizing */
+}
+
+/* 📱 Medium Screens (Tablets) */
+@media (max-width: 768px) {
+    .contact-form {
+        width: 70%;
+        padding: 15px;
+    }
+
+    .social-buttons a {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+}
+
+/* 📱 Small Screens (Mobile) */
+@media (max-width: 480px) {
+    .contact-form {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .contact-form button {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .social-buttons {
+        gap: 8px;  /* Reduce spacing but keep inline */
+    }
+
+    .social-buttons a {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+}
+@media (max-width: 480px) {
+    .contact-form button {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
 
