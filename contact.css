@@ -530,3 +530,45 @@ body.dark-mode .contact-form textarea {
 }
 
 
+/* Ensure Contact Form is Centered */
+.contact-container {
+    display: flex;
+    flex-direction: column; /* Stack items */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+/* Fix Form Alignment */
+.contact-form {
+    width: 90%; /* Adjust width dynamically */
+    max-width: 400px; /* Prevent excessive stretching */
+    margin: 0 auto; /* Center the form */
+}
+
+/* Social Button Styling */
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center alignment */
+    gap: 10px; /* Spacing between buttons */
+}
+
+.social-icon img {
+    width: 35px; /* Reduce button size for smaller screens */
+    height: 35px;
+}
+
+@media (max-width: 600px) {
+    .social-icon img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button {
+        width: 100%; /* Ensure full width */
+    }
+}
