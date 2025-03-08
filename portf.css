@@ -383,7 +383,6 @@ body, .logo, .nav-links a, .hero h1, .hero p, .contact h2, .contact-icons a {
     color: var(--text-color);
 }
 
-
 /* Responsive Styles */
 @media (max-width: 1024px) {
     .navbar {
@@ -890,3 +889,11 @@ img {
 .dark-mode .hamburger {
     color: white; /* Ensures it's still white in dark mode */
 }
+
+/* 
+body {
+    background-image: url('paper.jpg.png'); /* Set the background image */
+    background-size: cover; /* Ensure it covers the entire page */
+    background-repeat: no-repeat; /* Prevent tiling */
+    background-attachment: ; /* Keep it fixed while scrolling */
+} */
