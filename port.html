@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="portf.css">
+    <script src="portf.js" defer></script>
+    <script src="https://kit.fontawesome.com/7055237d45.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-size: contain;
+        }
+    </style>
+</head>
+<body>
+   
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Kunal Sood</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="Adobe Scan 23-Feb-2025.pdf" class="resume-btn" download>Resume</a></li>
+        </ul>
+        <div class="right-menu">
+            <button class="theme-toggle">🌙</button>
+            <button class="hamburger">☰</button>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <img src="me.jpg" class="im1">
+            <div class="text-container">
+                <h1>Hi, I'm <span class="highlight">Kunal Sood</span></h1>
+                <p>Frontend Developer | Passionate about creating interactive and engaging web experiences.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-icons">
+            <a href="https://www.linkedin.com/in/kunal-sood-66a305332" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://wa.me/919915353386" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://github.com/KunalSood-19" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- AI Assistant -->
+    <div class="chatbot-container">
+        <div class="chat-icon" onclick="toggleChat()">
+            💬
+        </div>
+        <div class="chat-box">
+            <div class="chat-header">
+                <span>AI Assistant</span>
+                <button onclick="toggleChat()">✖</button>
+            </div>
+            <div class="chat-body" id="chat-body">
+                <p class="bot-message">Hello! How can I assist you today? 😊</p>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Type a message...">
+                <button onclick="sendMessage()">➤</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
