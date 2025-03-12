@@ -11,7 +11,7 @@
 
 /* Background Image */
 body {
-    background: url('background.jpg') no-repeat center center fixed;
+    background-color: #0c141c;
     background-size: cover;
     color: white;
 }
