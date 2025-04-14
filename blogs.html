@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="blogs.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">MyPortfolio</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="Adobe Scan 23-Feb-2025.pdf">Resume</a></li>
+      </ul>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Add Blog Section -->
+    <section class="add-blog">
+        <h2>Add a New Blog</h2>
+        <input type="text" id="blogTitle" placeholder="Title">
+        <textarea id="blogContent" placeholder="Write your blog here..."></textarea>
+        <input type="file" id="blogImage">
+        <input type="text" id="blogTags" placeholder="Tags (comma-separated)">
+        <button id="addBlogBtn">Post Blog</button>
+    </section>
+
+
+    <!-- All Blogs Section -->
+    <section class="blog-list">
+        <h2>All Blogs</h2>
+        <div class="blog-container"></div>
+    </section>  </main>
+
+  <script>
+    // Hamburger menu functionality
+   
+    const toggle = document.getElementById('menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    document.addEventListener("DOMContentLoaded", () => {
+    const blogContainer = document.querySelector(".blog-container");
+    const addBlogBtn = document.getElementById("addBlogBtn");
+
+    // Load Blogs from Local Storage
+    let blogs = JSON.parse(localStorage.getItem("blogs")) || [];
+
+    // Function to Save Blogs to Local Storage
+    function saveBlogsToLocalStorage() {
+        localStorage.setItem("blogs", JSON.stringify(blogs));
+    }
+
+    // Add Blog Function
+    addBlogBtn.addEventListener("click", () => {
+        const title = document.getElementById("blogTitle").value;
+        const content = document.getElementById("blogContent").value;
+        const file = document.getElementById("blogImage").files[0];
+
+        if (!title || !content || !file) {
+            alert("Please fill all fields!");
+            return;
+        }
+
+        // Convert image to Base64 and save
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+            const imgBase64 = reader.result; // Base64 Image Data
+
+            const newBlog = { 
+                title, 
+                content, 
+                imgBase64, 
+                likes: 0
+            };
+            blogs.push(newBlog);
+
+            saveBlogsToLocalStorage();
+            displayBlogs();
+
+            // Clear Input Fields
+            document.getElementById("blogTitle").value = "";
+            document.getElementById("blogContent").value = "";
+            document.getElementById("blogImage").value = "";
+        };
+    });
+
+    // Display Blogs
+    function displayBlogs() {
+        blogContainer.innerHTML = "";
+
+        blogs.forEach((blog, index) => {
+            const blogCard = document.createElement("div");
+            blogCard.classList.add("blog-card");
+            blogCard.innerHTML = `
+                <img src="${blog.imgBase64}" alt="${blog.title}" width="300">
+                <h2>${blog.title}</h2>
+                <p>${blog.content.substring(0, 100)}...</p>
+                <button class="like-btn" data-index="${index}">❤️ ${blog.likes}</button>
+                <button class="delete-btn" data-index="${index}">🗑️ Delete</button>
+            `;
+
+            blogContainer.appendChild(blogCard);
+
+            // Like Button Functionality (Increments Likes)
+            blogCard.querySelector(".like-btn").addEventListener("click", (event) => {
+                const blogIndex = event.target.getAttribute("data-index");
+                blogs[blogIndex].likes++; // Increment Like Count
+                saveBlogsToLocalStorage(); // Save Updated Likes
+                displayBlogs(); // Refresh UI
+            });
+
+            // Delete Blog
+            blogCard.querySelector(".delete-btn").addEventListener("click", (event) => {
+                const indexToDelete = event.target.getAttribute("data-index");
+                blogs.splice(indexToDelete, 1);
+                saveBlogsToLocalStorage();
+                displayBlogs();
+            });
+        });
+    }
+
+    // Load Blogs on Page Load
+    displayBlogs();
+});
+
+
+</script>
+</body>
+</html>

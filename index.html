@@ -482,9 +482,9 @@
         }
 
         .card-back {
-            background: linear-gradient(to right, #0ba906, #3cb54a);
+            background: linear-gradient(to right, #0ed1db, #e8f2e9);
             border-color: #000000;
-            color: white;
+            color: black;
             transform: rotateY(180deg);
 
         }
@@ -918,7 +918,56 @@
     }
 }
 
+/* Update the header section for mobile */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 30px 20px;
+        text-align: center;
+    }
 
+    .content {
+        max-width: 100%;
+        margin: 0;
+        padding: 0 20px;
+    }
+
+    .content h1 {
+        font-size: 2.5rem;
+        margin-right: 0;
+    }
+
+    .content h2 {
+        font-size: 1.5rem;
+        margin-right: 0;
+    }
+
+    .image-placeholder {
+        width: 60%;
+        margin: 30px auto 0;
+        order: 2; /* Makes image appear after text */
+    }
+
+    .cta-button {
+        margin-right: 0;
+    }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+    .image-placeholder {
+        width: 80%;
+    }
+    
+    .content h1 {
+        font-size: 2rem;
+    }
+    
+    .content h2 {
+        font-size: 1.2rem;
+    }
+}
 .footer-logo{margin-left: 80px;}
 .footer-icons{margin-right: 50px;}
     </style>
@@ -931,9 +980,9 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="skills.html">Skills</a></li>
             <li><a href="projects.html">Projects</a></li>
-            <li><a href="blog.html">Blogs</a></li>
+            <li><a href="blogs.html">Blogs</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="#" class="contact-button">Contact</a></li>
+            <li><a href="contact.html" class="contact-button">Contact</a></li>
         </ul>
         
         <!-- Hamburger Icon -->
