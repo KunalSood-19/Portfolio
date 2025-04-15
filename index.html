@@ -967,7 +967,59 @@
     .content h2 {
         font-size: 1.2rem;
     }
+}/* Ensure the image doesn't overlap on mobile */
+@media (max-width: 768px) {
+    .image-placeholder {
+        width: 80%; /* Adjust width for smaller screens */
+        margin-top: 220px; /* Add top margin to avoid overlap */
+        margin-bottom: 20px; /* Add bottom margin for spacing */
+    }
+
+    .image-placeholder img {
+        width: 100%; /* Ensure the image scales properly */
+        height: auto;
+        display: block;
+        border-radius: 60px;
+        position: relative;
+        z-index: 1; /* Ensure image stays below other content */
+    }
+
+    /* Adjust the content section */
+    .content {
+        margin-top: 20px; /* Add margin to push content down */
+        max-width: 100%;
+    }
+
+    /* Adjust text size and margins for smaller screens */
+    .content h1 {
+        font-size: 2.5rem;
+        margin-right: 0;
+    }
+
+    .content h2 {
+        font-size: 1.5rem;
+        margin-right: 0;
+    }
 }
+.profile-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    z-index: 0;
+    position: relative;
+}
+
+.profile-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    z-index: 0;
+}
+
 .footer-logo{margin-left: 80px;}
 .footer-icons{margin-right: 50px;}
     </style>
@@ -996,7 +1048,7 @@
             <h1>Hi,I'm <i class="ii">Kunal Sood</i></h1>
             <h2>Frontend Developer</h2>
 
-            <a href="#" class="cta-button">Download Resume</a>
+            <a href="Adobe Scan 23-Feb-2025.pdf" class="cta-button">Download Resume</a>
         </div>
        
         <div class="image-placeholder">
